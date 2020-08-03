@@ -5,10 +5,7 @@ import java.io.File;
 import model.Image;
 import persistence.FileImageLoader;
 
-/**
- *
- * @author 34667
- */
+
 public class Main {
 
     public static void main(String[] args) {
