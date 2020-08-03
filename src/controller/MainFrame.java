@@ -22,7 +22,6 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
         this.setTitle("Image Viewer");
-        
         this.setSize(800, 400);
         this.setLocationRelativeTo(null);
         this.getContentPane().add(imageDisplay());
