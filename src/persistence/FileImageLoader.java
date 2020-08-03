@@ -13,9 +13,15 @@ public class FileImageLoader implements ImageLoader {
     private FileFilter imageTypes() {
         return new FileFilter() {
             
+            private final String[] formats = {".JPG",".BMP",".PNG"};
+            
             @Override
             public boolean accept(File pathname) {
-                return pathname.getName().toUpperCase().endsWith(".JPG");
+                for (String format : formats) {
+                    if(pathname.getName().toUpperCase().endsWith(format))
+                        return true;
+                }
+                return false;
             }
         };
     }
@@ -52,10 +58,7 @@ public class FileImageLoader implements ImageLoader {
                 return i == 0 ? imageAt(files.length - 1) : imageAt(i-1);
             }
 
-            @Override
-            public byte[] data() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
+            
         };
     }
     
